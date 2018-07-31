@@ -31,6 +31,7 @@
 </template>
 
 <script>
+import Visor from "@/components/Visor"
 export default {
     name: 'Main',
     data () {
@@ -88,18 +89,6 @@ export default {
       backspace () {
         this.current = this.current.substring(0, this.current.length - 1)
       },
-      multiply () {
-        this.current += "*"
-      },
-      divide () {
-        this.current += "/"
-      },
-      plus () {
-        this.current += "+"
-      },
-      minus () {
-        this.current += "-"
-      },
       sin () {
         this.current = Math.sin(this.current)
       },
@@ -115,6 +104,9 @@ export default {
       square () {
         this.current = this.current ** 2
       }
+    },
+    components: {
+      Visor
     }
 }
 </script>
