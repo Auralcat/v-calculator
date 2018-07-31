@@ -21,6 +21,9 @@
       <button class="button" v-on:click="press">C</button>
       <button class="button" v-on:click="press">*</button>
       <button class="button" v-on:click="press">/</button>
+      <button class="button" v-on:click="press">+</button>
+      <button class="button" v-on:click="press">-</button>
+      <button class="button" v-on:click="press">←</button>
       <button class="button" v-on:click="press">√</button>
       <button class="button" v-on:click="press">x²</button>
     </div>
@@ -59,6 +62,9 @@ export default {
             break
           case "x²":
             this.square()
+            break
+          case "←":
+            this.backspace()
             break
           default:
             this.current += key
