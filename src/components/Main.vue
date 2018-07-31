@@ -1,6 +1,12 @@
 <template>
   <div class="results">
     <input class="input" name="" type="text" value="" v-model="current"/>
+    <button class="change-mode">
+      <p v-show="changeMode">Show Advanced Mode</p>
+      <p v-show="!changeMode">Show Basic Mode</p>
+    </button>
+    <div class="advanced-mode" v-show="!changeMode"></div>
+    <div class="basic-mode" v-show="changeMode"></div>
     <div class="buttons">
       <button class="button" v-on:click="press">7</button>
       <button class="button" v-on:click="press">8</button>
@@ -25,7 +31,8 @@
 export default {
     name: 'Main',
     data: {
-      current: ''
+      current: '',
+      changeMode: true
     },
     methods: {
       press (event) {
