@@ -54,6 +54,48 @@ export default {
           default
             this.current += key
         }
+      },
+      /* Refactor later */
+      /* The = button */
+      equals () {
+        if ((app.current).indexOf("^") > -1) {
+          let base = (app.break).slice(0, (app.current).indexOf("^"))
+          let exponent = (app.current).slice((app.current).indexOf("^") + 1)
+          app.current = eval("Math.pow(" + base + "," + exponent + ")")
+        } else {
+          app.current = eval(app.current)
+        }
+      },
+      /* The C button */
+      clear () {
+        app.current = "";
+      },
+      backspace () {
+        app.current = app.current.substring(0, app.current.length - 1)
+      },
+      multiply () {
+        app.current += "*"
+      },
+      divide () {
+        app.current += "/"
+      },
+      plus () {
+        app.current += "+"
+      },
+      minus () {
+        app.current += "-"
+      },
+      sin () {
+        app.current = Math.sin(app.current)
+      },
+      cos () {
+        app.current = Math.cos(app.current)
+      },
+      tan () {
+        app.current = Math.tan(app.current)
+      },
+      log10 () {
+        app.current = Math.log10(app.current)
       }
     }
 }
