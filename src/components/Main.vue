@@ -1,6 +1,6 @@
 <template>
   <div class="results">
-    <input class="input" name="" type="text" value="" v-model="current"/>
+    <input class="input" name="" type="text" readonly value="" v-model="current"/>
     <button class="change-mode">
       <p v-show="changeMode">Show Advanced Mode</p>
       <p v-show="!changeMode">Show Basic Mode</p>
@@ -58,7 +58,7 @@ export default {
           case "x²":
             square()
             break
-          default
+          default:
             this.current += key
         }
       },
