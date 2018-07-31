@@ -8,30 +8,40 @@
     <div class="advanced-mode" v-show="!changeMode"></div>
     <div class="basic-mode" v-show="changeMode"></div>
     <div class="buttons">
-      <button class="button" v-on:click="press">7</button>
-      <button class="button" v-on:click="press">8</button>
-      <button class="button" v-on:click="press">9</button>
-      <button class="button" v-on:click="press">4</button>
-      <button class="button" v-on:click="press">5</button>
-      <button class="button" v-on:click="press">6</button>
-      <button class="button" v-on:click="press">1</button>
-      <button class="button" v-on:click="press">2</button>
-      <button class="button" v-on:click="press">3</button>
-      <button class="button equal-sign" v-on:click="press">=</button>
-      <button class="button" v-on:click="press">C</button>
-      <button class="button" v-on:click="press">*</button>
-      <button class="button" v-on:click="press">/</button>
-      <button class="button" v-on:click="press">+</button>
-      <button class="button" v-on:click="press">-</button>
-      <button class="button" v-on:click="press">←</button>
-      <button class="button" v-on:click="press">√</button>
-      <button class="button" v-on:click="press">x²</button>
+      <div class="numbers">
+        <div class="number-row">
+          <calc-button label="7"/>
+          <calc-button label="8"/>
+          <calc-button label="9"/>
+        </div>
+        <div class="number-row">
+          <calc-button label="4"/>
+          <calc-button label="5"/>
+          <calc-button label="6"/>
+        </div>
+        <div class="number-row">
+          <calc-button label="1"/>
+          <calc-button label="2"/>
+          <calc-button label="3"/>
+        </div>
+      </div>
+      <calc-button label="="/>
+      <calc-button label="C"/>
+      <calc-button label="*"/>
+      <calc-button label="/"/>
+      <calc-button label="+"/>
+      <calc-button label="-"/>
+      <calc-button label="←"/>
+      <calc-button label="√"/>
+      <calc-button label="x²"/>
     </div>
   </div>
 </template>
 
 <script>
 import Visor from "@/components/Visor"
+import CalcButton from "@/components/Button"
+
 export default {
     name: 'Main',
     data () {
@@ -106,7 +116,8 @@ export default {
       }
     },
     components: {
-      Visor
+      Visor,
+      CalcButton
     }
 }
 </script>
