@@ -9,8 +9,7 @@ export default {
   props: ['label'],
   methods: {
     press () {
-      let key = this.label
-      switch (key) {
+      switch (this.label) {
         case "=":
           this.equals()
           break
@@ -33,10 +32,9 @@ export default {
           this.backspace()
           break
         default:
-          current += key
+          current += this.label
       }
     },
-    /* Refactor later */
     /* The = button */
     equals () {
       if ((current).indexOf("^") > -1) {

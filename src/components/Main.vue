@@ -46,7 +46,6 @@ export default {
     name: 'Main',
     data () {
       return {
-        current: '',
         changeMode: true
       }
     },
