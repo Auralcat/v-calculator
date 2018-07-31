@@ -5,13 +5,15 @@
 </template>
 
 <script>
-  export default {
-    data () {
-      return {
-        current: ''
-      }
+import { current } from "@/logic"
+
+export default {
+  data () {
+    return {
+      current
     }
   }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

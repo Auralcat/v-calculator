@@ -1,6 +1,6 @@
 <template>
   <div class="results">
-    <input class="input" name="" type="text" readonly value="" v-model="current"/>
+    <visor/>
     <button class="change-mode" v-on:click="changeMode = !changeMode">
       <p v-show="changeMode">Show Advanced Mode</p>
       <p v-show="!changeMode">Show Basic Mode</p>
@@ -51,69 +51,6 @@ export default {
       }
     },
     methods: {
-      press (event) {
-        /* We make a reference to the inner text of each button
-           to dispatch our functions*/
-        let key = event.target.innerText
-        switch (key) {
-          case "=":
-            this.equals()
-            break
-          case "C":
-            this.clear()
-            break
-          case "*":
-            this.multiply()
-            break
-          case "/":
-            this.divide()
-            break
-          case "√":
-            this.squareRoot()
-            break
-          case "x²":
-            this.square()
-            break
-          case "←":
-            this.backspace()
-            break
-          default:
-            this.current += key
-        }
-      },
-      /* Refactor later */
-      /* The = button */
-      equals () {
-        if ((this.current).indexOf("^") > -1) {
-          let base = (this.current).slice(0, (this.current).indexOf("^"))
-          let exponent = (this.current).slice((this.current).indexOf("^") + 1)
-          this.current = eval("Math.pow(" + base + "," + exponent + ")")
-        } else {
-          this.current = eval(this.current)
-        }
-      },
-      /* The C button */
-      clear () {
-        this.current = "";
-      },
-      backspace () {
-        this.current = this.current.substring(0, this.current.length - 1)
-      },
-      sin () {
-        this.current = Math.sin(this.current)
-      },
-      cos () {
-        this.current = Math.cos(this.current)
-      },
-      tan () {
-        this.current = Math.tan(this.current)
-      },
-      log10 () {
-        this.current = Math.log10(this.current)
-      },
-      square () {
-        this.current = this.current ** 2
-      }
     },
     components: {
       Visor,
