@@ -1,7 +1,7 @@
 <template>
   <div class="results">
     <input class="input" name="" type="text" readonly value="" v-model="current"/>
-    <button class="change-mode">
+    <button class="change-mode" v-on:click="changeMode = !changeMode">
       <p v-show="changeMode">Show Advanced Mode</p>
       <p v-show="!changeMode">Show Basic Mode</p>
     </button>
@@ -30,9 +30,11 @@
 <script>
 export default {
     name: 'Main',
-    data: {
-      current: '',
-      changeMode: true
+    data () {
+      return {
+        current: '',
+        changeMode: true
+      }
     },
     methods: {
       press (event) {
@@ -41,22 +43,22 @@ export default {
         let key = event.target.innerText
         switch (key) {
           case "=":
-            equals()
+            this.equals()
             break
           case "C":
-            clear()
+            this.clear()
             break
           case "*":
-            multiply()
+            this.multiply()
             break
           case "/":
-            divide()
+            this.divide()
             break
           case "√":
-            squareRoot()
+            this.squareRoot()
             break
           case "x²":
-            square()
+            this.square()
             break
           default:
             this.current += key
@@ -65,44 +67,47 @@ export default {
       /* Refactor later */
       /* The = button */
       equals () {
-        if ((app.current).indexOf("^") > -1) {
-          let base = (app.break).slice(0, (app.current).indexOf("^"))
-          let exponent = (app.current).slice((app.current).indexOf("^") + 1)
-          app.current = eval("Math.pow(" + base + "," + exponent + ")")
+        if ((this.current).indexOf("^") > -1) {
+          let base = (this.current).slice(0, (this.current).indexOf("^"))
+          let exponent = (this.current).slice((this.current).indexOf("^") + 1)
+          this.current = eval("Math.pow(" + base + "," + exponent + ")")
         } else {
-          app.current = eval(app.current)
+          this.current = eval(this.current)
         }
       },
       /* The C button */
       clear () {
-        app.current = "";
+        this.current = "";
       },
       backspace () {
-        app.current = app.current.substring(0, app.current.length - 1)
+        this.current = this.current.substring(0, this.current.length - 1)
       },
       multiply () {
-        app.current += "*"
+        this.current += "*"
       },
       divide () {
-        app.current += "/"
+        this.current += "/"
       },
       plus () {
-        app.current += "+"
+        this.current += "+"
       },
       minus () {
-        app.current += "-"
+        this.current += "-"
       },
       sin () {
-        app.current = Math.sin(app.current)
+        this.current = Math.sin(this.current)
       },
       cos () {
-        app.current = Math.cos(app.current)
+        this.current = Math.cos(this.current)
       },
       tan () {
-        app.current = Math.tan(app.current)
+        this.current = Math.tan(this.current)
       },
       log10 () {
-        app.current = Math.log10(app.current)
+        this.current = Math.log10(this.current)
+      },
+      square () {
+        this.current = this.current ** 2
       }
     }
 }
