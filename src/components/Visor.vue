@@ -1,16 +1,16 @@
 <template>
   <div>
-    <input class="input" name="" type="text" readonly value="" v-model="current"/>
+    <input class="input" name="" type="text" readonly value="" v-model="currentDisplay"/>
   </div>
 </template>
 
 <script>
-import { current } from "@/logic"
+import store from "@/store"
 
 export default {
   data () {
     return {
-      current
+      currentDisplay: store.current
     }
   }
 }
