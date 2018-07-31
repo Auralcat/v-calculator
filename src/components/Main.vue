@@ -23,7 +23,39 @@
 
 <script>
 export default {
-  name: 'Main',
+    name: 'Main',
+    data: {
+      current: ''
+    },
+    methods: {
+      press (event) {
+        /* We make a reference to the inner text of each button
+           to dispatch our functions*/
+        let key = event.target.innerText
+        switch (key) {
+          case "=":
+            equals()
+            break
+          case "C":
+            clear()
+            break
+          case "*":
+            multiply()
+            break
+          case "/":
+            divide()
+            break
+          case "√":
+            squareRoot()
+            break
+          case "x²":
+            square()
+            break
+          default
+            this.current += key
+        }
+      }
+    }
 }
 </script>
 
