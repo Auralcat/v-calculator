@@ -8,9 +8,9 @@
 import store from "@/store"
 
 export default {
-  data () {
-    return {
-      currentDisplay: store.current
+  computed: {
+    currentDisplay () {
+      return store.state.current
     }
   }
 }

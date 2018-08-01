@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    current: ''
+    current: '0'
   },
   mutations: {
     /* The = button */
