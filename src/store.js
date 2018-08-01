@@ -3,13 +3,10 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
-  state: {
-    current: '0'
-  },
-  mutations: {
+// For testing
+export const mutations = {
     /* The = button */
-    EQUALS (state) {
+  equals: (state) => {
       if ((state.current).indexOf("^") > -1) {
         let base = (state.current).slice(0, (state.current).indexOf("^"))
         let exponent = (state.current).slice((state.current).indexOf("^") + 1)
@@ -19,32 +16,38 @@ export default new Vuex.Store({
       }
     },
     /* The C button */
-    CLEAR (state) {
+  clear: (state) => {
       state.current = "";
     },
-    BACKSPACE (state) {
+  backspace: (state) => {
       state.current = state.current.substring(0, state.current.length - 1)
     },
-    SIN (state) {
+  sin: (state) => {
       state.current = Math.sin(state.current)
     },
-    COS (state) {
+  cos: (state) => {
       state.current = Math.cos(state.current)
     },
-    TAN (state) {
+  tan: (state) => {
       state.current = Math.tan(state.current)
     },
-    LOG10 (state) {
+  log10: (state) => {
       state.current = Math.log10(state.current)
     },
-    SQUARE (state) {
+  square: (state) => {
       state.current = state.current ** 2
     },
-    ADDCHAR (state, newChar) {
+  addchar: (state, newChar) => {
       state.current += newChar
     }
-  },
-  actions: {
+}
 
-  }
+export const actions = {}
+
+export default new Vuex.Store({
+  state: {
+    current: '0'
+  },
+  mutations,
+  actions
 })
