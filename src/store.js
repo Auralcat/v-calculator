@@ -40,7 +40,7 @@ export default new Vuex.Store({
     SQUARE (state) {
       state.current = state.current ** 2
     },
-    WRITECHAR (state, newChar) {
+    ADDCHAR (state, newChar) {
       state.current += newChar
     }
   },

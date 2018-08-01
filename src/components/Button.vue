@@ -11,22 +11,22 @@ export default {
     press () {
       switch (this.label) {
         case "=":
-          store.dispatch("EQUALS")
+          store.commit("EQUALS")
           break
         case "C":
-          store.dispatch("CLEAR")
+          store.commit("CLEAR")
           break
         case "√":
-          store.dispatch("SQUAREROOT")
+          store.commit("SQUAREROOT")
           break
         case "x²":
-          store.dispatch("SQUARE")
+          store.commit("SQUARE")
           break
         case "←":
-          store.dispatch("BACKSPACE")
+          store.commit("BACKSPACE")
           break
         default:
-          store.dispatch("ADDCHAR")
+          store.commit("ADDCHAR", this.label)
       }
     },
   }
