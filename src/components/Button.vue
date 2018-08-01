@@ -11,28 +11,22 @@ export default {
     press () {
       switch (this.label) {
         case "=":
-          this.equals()
+          store.dispatch("EQUALS")
           break
         case "C":
-          this.clear()
-          break
-        case "*":
-          this.multiply()
-          break
-        case "/":
-          this.divide()
+          store.dispatch("CLEAR")
           break
         case "√":
-          this.squareRoot()
+          store.dispatch("SQUAREROOT")
           break
         case "x²":
-          this.square()
+          store.dispatch("SQUARE")
           break
         case "←":
-          this.backspace()
+          store.dispatch("BACKSPACE")
           break
         default:
-          current += this.label
+          store.dispatch("ADDCHAR")
       }
     },
   }
