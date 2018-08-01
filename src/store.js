@@ -39,7 +39,10 @@ export const mutations = {
     },
   addchar: (state, newChar) => {
       state.current += newChar
-    }
+  },
+  squareroot: (state) => {
+    state.current = Math.sqrt(state.current)
+  }
 }
 
 export const actions = {}

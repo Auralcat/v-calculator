@@ -10,7 +10,7 @@ describe('mutations', () => {
 
   it('backspace should remove the last char', function(){
     const state = { current: 'whatever' }
-    mutations.clear(state)
+    mutations.backspace(state)
     expect(state.current).to.equal('whateve')
   });
 
@@ -22,6 +22,12 @@ describe('mutations', () => {
 })
 
 describe('math operations', function(){
+  it("Operations follow standard arithmetic order", function() {
+    const state = { current: '23*(12+7)/29' }
+    mutations.equals(state)
+    expect(state.current).to.equal(23*(12+7)/29)
+  });
+
   it("equals should return the correct operation result", function() {
     const state = { current: '45+12' }
     mutations.equals(state)
