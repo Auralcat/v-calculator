@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { current } from '@/logic'
+import store from "@/store"
 
 export default {
   props: ['label'],
@@ -35,38 +35,6 @@ export default {
           current += this.label
       }
     },
-    /* The = button */
-    equals () {
-      if ((current).indexOf("^") > -1) {
-        let base = (current).slice(0, (current).indexOf("^"))
-        let exponent = (current).slice((current).indexOf("^") + 1)
-        current = eval("Math.pow(" + base + "," + exponent + ")")
-      } else {
-        current = eval(current)
-      }
-    },
-    /* The C button */
-    clear () {
-      current = "";
-    },
-    backspace () {
-      current = current.substring(0, current.length - 1)
-    },
-    sin () {
-      current = Math.sin(current)
-    },
-    cos () {
-      current = Math.cos(current)
-    },
-    tan () {
-      current = Math.tan(current)
-    },
-    log10 () {
-      current = Math.log10(current)
-    },
-    square () {
-      current = current ** 2
-    }
   }
 }
 </script>
