@@ -13,7 +13,7 @@ export default {
         case "=":
           store.commit("equals")
           break
-        case "c":
+        case "C":
           store.commit("clear")
           break
         case "√":

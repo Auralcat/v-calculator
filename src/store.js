@@ -46,7 +46,7 @@ export const actions = {}
 
 export default new Vuex.Store({
   state: {
-    current: '0'
+    current: ''
   },
   mutations,
   actions

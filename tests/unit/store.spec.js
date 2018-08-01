@@ -1,14 +1,67 @@
 import { expect } from 'chai'
 import { mutations } from '@/store'
 
-// Destructure assign mutations
-const { addchar } = mutations
 describe('mutations', () => {
   it("addchar should add that char to current value", function() {
     const state = { current: '0' }
-    addchar(state, 'A')
+    mutations.addchar(state, 'A')
     expect(state.current).to.equal('0A')
   });
 
+  it('backspace should remove the last char', function(){
+    const state = { current: 'whatever' }
+    mutations.clear(state)
+    expect(state.current).to.equal('whateve')
+  });
+
+  it('clear should set current value to ""', function(){
+    const state = { current: 'whatever' }
+    mutations.clear(state)
+    expect(state.current).to.equal('')
+  });
+})
+
+describe('math operations', function(){
+  it("equals should return the correct operation result", function() {
+    const state = { current: '45+12' }
+    mutations.equals(state)
+    expect(state.current).to.equal(45+12)
+  });
+
+  it("square should return the correct result", function() {
+    const state = { current: '45' }
+    mutations.square(state)
+    expect(state.current).to.equal(45 ** 2)
+  });
+
+  it("sin should return the correct result", function() {
+    const state = { current: '45' }
+    mutations.sin(state)
+    expect(state.current).to.equal(Math.sin(45))
+  });
+
+  it("cos should return the correct result", function() {
+    const state = { current: '45' }
+    mutations.cos(state)
+    expect(state.current).to.equal(Math.cos(45))
+  });
+
+  it("tan should return the correct result", function() {
+    const state = { current: '45' }
+    mutations.tan(state)
+    expect(state.current).to.equal(Math.tan(45))
+  });
+
+  it("log10 should return the correct result", function() {
+    const state = { current: '45' }
+    mutations.log10(state)
+    expect(state.current).to.equal(Math.log10(45))
+  });
+
+  it("squareroot should return the correct result", function() {
+    const state = { current: '45' }
+    mutations.squareroot(state)
+    expect(state.current).to.equal(Math.sqrt(45))
+  });
 
 })
