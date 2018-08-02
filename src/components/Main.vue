@@ -34,6 +34,8 @@
       <calc-button label="←"/>
       <calc-button label="√"/>
       <calc-button label="x²"/>
+      <calc-button label="ln"/>
+      <calc-button label="ϖ"/>
     </div>
   </div>
 </template>

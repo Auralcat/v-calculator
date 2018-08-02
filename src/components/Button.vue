@@ -13,6 +13,12 @@ export default {
         case "=":
           store.commit("equals")
           break
+        case "ϖ":
+          store.commit("printPi")
+          break
+        case "ln":
+          store.commit("ln")
+          break
         case "C":
           store.commit("clear")
           break
