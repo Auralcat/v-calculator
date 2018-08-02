@@ -36,6 +36,7 @@
       <calc-button label="x²"/>
       <calc-button label="ln"/>
       <calc-button label="ϖ"/>
+      <calc-button label="^"/>
     </div>
   </div>
 </template>

@@ -78,7 +78,7 @@ describe('math operations', function(){
 
   it("should display the correct result when exponentiating numbers", function() {
     const state = { current: '5^3' }
-    mutations.squareroot(state)
+    mutations.equals(state)
     expect(state.current).to.equal(Math.pow(5, 3))
   })
 
