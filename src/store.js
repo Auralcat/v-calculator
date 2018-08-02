@@ -40,6 +40,12 @@ export const mutations = {
   addchar: (state, newChar) => {
       state.current += newChar
   },
+  printPi: (state) => {
+    state.current = Math.PI.toString()
+  },
+  ln: (state) => {
+    state.current = Math.log(state.current)
+  },
   squareroot: (state) => {
     state.current = Math.sqrt(state.current)
   }

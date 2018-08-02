@@ -19,6 +19,12 @@ describe('mutations', () => {
     mutations.clear(state)
     expect(state.current).to.equal('')
   });
+
+  it("addPi should change the current value to the value of PI", function() {
+    const state = { current: 'whatever' }
+    mutations.printPi(state)
+    expect(state.current).to.equal(Math.PI.toString())
+  });
 })
 
 describe('math operations', function(){
@@ -70,4 +76,15 @@ describe('math operations', function(){
     expect(state.current).to.equal(Math.sqrt(45))
   });
 
+  it("should display the correct result when exponentiating numbers", function() {
+    const state = { current: '5^3' }
+    mutations.squareroot(state)
+    expect(state.current).to.equal(Math.pow(5, 3))
+  })
+
+  it("ln should return the correct result", function() {
+    const state = { current: '16' }
+    mutations.ln(state)
+    expect(state.current).to.equal(Math.log(16))
+  });
 })
