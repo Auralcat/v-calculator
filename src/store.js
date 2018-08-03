@@ -20,7 +20,8 @@ export const mutations = {
       state.current = "";
     },
   backspace: (state) => {
-    state.current = (state.current.toString()).substring(0, state.current.length - 1)
+    let currentString = state.current.toString()
+    state.current = (currentString).substring(0, currentString.length - 1)
     },
   sin: (state) => {
       state.current = Math.sin(state.current)

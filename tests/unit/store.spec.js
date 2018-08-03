@@ -9,9 +9,10 @@ describe('mutations', () => {
   });
 
   it('backspace should remove the last char', function(){
-    const state = { current: 'whatever' }
+    const state = { current: '32*3' }
+    mutations.equals(state)
     mutations.backspace(state)
-    expect(state.current).to.equal('whateve')
+    expect(state.current).to.equal(Math.eval('32*3').substring(0, state.current.length - 1))
   });
 
   it('clear should set current value to ""', function(){
