@@ -32,12 +32,6 @@ describe('mutations', () => {
     mutations.squareroot(state)
     expect(state.current).to.equal(Math.sqrt(Math.PI))
   });
-
-  it("current should be a string after operation execution", function() {
-    const state = { current: '123' }
-    mutations.square(state)
-    expect(state.current).to.be.a('string')
-  });
 })
 
 describe('math operations', function(){
