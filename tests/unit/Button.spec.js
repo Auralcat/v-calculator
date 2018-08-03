@@ -14,4 +14,9 @@ describe('Button.vue', () => {
     button.trigger('click')
     expect(store.state.current).to.equal("7")
   })
+
+  it('should be able to execute function call', function(){
+
+  });
+
 })

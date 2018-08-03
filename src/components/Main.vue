@@ -5,8 +5,14 @@
       <p v-show="changeMode">Show Advanced Mode</p>
       <p v-show="!changeMode">Show Basic Mode</p>
     </button>
-    <div class="advanced-mode" v-show="!changeMode"></div>
     <div class="basic-mode" v-show="changeMode"></div>
+    <div class="advanced-mode" v-show="!changeMode">
+      <calc-button label="√"/>
+      <calc-button label="x²"/>
+      <calc-button label="ln"/>
+      <calc-button label="ϖ"/>
+      <calc-button label="^"/>
+    </div>
     <div class="buttons">
       <div class="numbers">
         <div class="number-row">
@@ -32,11 +38,6 @@
       <calc-button label="+"/>
       <calc-button label="-"/>
       <calc-button label="←"/>
-      <calc-button label="√"/>
-      <calc-button label="x²"/>
-      <calc-button label="ln"/>
-      <calc-button label="ϖ"/>
-      <calc-button label="^"/>
     </div>
   </div>
 </template>

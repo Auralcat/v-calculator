@@ -25,6 +25,19 @@ describe('mutations', () => {
     mutations.printPi(state)
     expect(state.current).to.equal(Math.PI.toString())
   });
+
+  it("should be able to execute evaluations successively", function() {
+    const state = { current: 'whatever' }
+    mutations.printPi(state)
+    mutations.squareroot(state)
+    expect(state.current).to.equal(Math.sqrt(Math.PI))
+  });
+
+  it("current should be a string after operation execution", function() {
+    const state = { current: '123' }
+    mutations.square(state)
+    expect(state.current).to.be.a('string')
+  });
 })
 
 describe('math operations', function(){
