@@ -14,22 +14,16 @@
       <calc-button label="^" class="operation" />
     </div>
     <div class="buttons">
-      <div class="numbers">
-        <div class="number-row">
-          <calc-button label="7" class="number" />
-          <calc-button label="8" class="number" />
-          <calc-button label="9" class="number" />
-        </div>
-        <div class="number-row">
-          <calc-button label="4" class="number" />
-          <calc-button label="5" class="number" />
-          <calc-button label="6" class="number" />
-        </div>
-        <div class="number-row">
-          <calc-button class="number" label="1"/>
-          <calc-button class="number" label="2"/>
-          <calc-button label="3" class="number" />
-        </div>
+      <div class="numbers-panel">
+        <calc-button label="7" class="number" />
+        <calc-button label="8" class="number" />
+        <calc-button label="9" class="number" />
+        <calc-button label="4" class="number" />
+        <calc-button label="5" class="number" />
+        <calc-button label="6" class="number" />
+        <calc-button class="number" label="1"/>
+        <calc-button class="number" label="2"/>
+        <calc-button label="3" class="number" />
       </div>
       <calc-button label="=" class="operation" />
       <calc-button label="C" class="warning" />
@@ -43,10 +37,10 @@
 </template>
 
 <script>
-import Visor from "@/components/Visor"
-import CalcButton from "@/components/Button"
+  import Visor from "@/components/Visor"
+  import CalcButton from "@/components/Button"
 
-export default {
+  export default {
     name: 'Main',
     data () {
       return {
@@ -59,10 +53,14 @@ export default {
       Visor,
       CalcButton
     }
-}
+  }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+  .numbers-panel {
+    display: grid;
+    grid-template-columns: 40px 40px 40px;
+    grid-gap: 4px;
+  }
 </style>
