@@ -7,31 +7,31 @@
     </button>
     <div class="basic-mode" v-show="changeMode"></div>
     <div class="advanced-mode" v-show="!changeMode">
-      <calc-button label="√" class="operation" />
-      <calc-button label="x²" class="operation" />
-      <calc-button label="ln" class="operation" />
-      <calc-button label="ϖ" class="operation" />
-      <calc-button label="^" class="operation" />
+      <calc-button class="operation" label="√" />
+      <calc-button class="operation" label="x²" />
+      <calc-button class="operation" label="ln" />
+      <calc-button class="operation" label="ϖ" />
+      <calc-button class="operation" label="^" />
     </div>
     <div class="buttons">
       <div class="numbers-panel">
-        <calc-button label="7" class="number" />
-        <calc-button label="8" class="number" />
-        <calc-button label="9" class="number" />
-        <calc-button label="4" class="number" />
-        <calc-button label="5" class="number" />
-        <calc-button label="6" class="number" />
+        <calc-button class="number" label="7" />
+        <calc-button class="number" label="8" />
+        <calc-button class="number" label="9" />
+        <calc-button class="number" label="4" />
+        <calc-button class="number" label="5" />
+        <calc-button class="number" label="6" />
         <calc-button class="number" label="1"/>
         <calc-button class="number" label="2"/>
-        <calc-button label="3" class="number" />
+        <calc-button class="number" label="3" />
       </div>
-      <calc-button label="=" class="operation" />
-      <calc-button label="C" class="warning" />
-      <calc-button label="*" class="operation" />
-      <calc-button label="/" class="operation" />
-      <calc-button label="+" class="operation" />
-      <calc-button label="-" class="operation" />
-      <calc-button label="←" class="warning" />
+      <calc-button class="operation" label="=" />
+      <calc-button class="warning" label="C" />
+      <calc-button class="operation" label="*" />
+      <calc-button class="operation" label="/" />
+      <calc-button class="operation" label="+" />
+      <calc-button class="operation" label="-" />
+      <calc-button class="warning" label="←" />
     </div>
   </div>
 </template>
