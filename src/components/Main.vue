@@ -28,13 +28,15 @@
         <calc-button class="number eight" label="8" />
         <calc-button class="number nine" label="9" />
       </div>
-      <calc-button class="operation" label="=" />
-      <calc-button class="warning" label="C" />
-      <calc-button class="operation" label="*" />
-      <calc-button class="operation" label="/" />
-      <calc-button class="operation" label="+" />
-      <calc-button class="operation" label="-" />
-      <calc-button class="warning" label="←" />
+      <div class="basic-operations-panel">
+        <calc-button class="operation" label="=" />
+        <calc-button class="warning" label="C" />
+        <calc-button class="operation" label="*" />
+        <calc-button class="operation" label="/" />
+        <calc-button class="operation" label="+" />
+        <calc-button class="operation" label="-" />
+        <calc-button class="warning" label="←" />
+      </div>
     </div>
   </div>
 </template>
@@ -113,4 +115,46 @@
     grid-column: 3;
     grid-row: 4;
   }
+
+  .basic-operations-panel {
+    display: grid;
+    grid-template-columns: 40px 40px;
+    grid-gap: 4px;
+  }
+
+  .backspace {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .clear {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .equals {
+    grid-column: 1 / span 2;
+    grid-row: 4;
+  }
+
+  .multiply {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .divide {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  .sum {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .subtraction {
+    grid-column: 2;
+    grid-row: 3;
+  }
+
 </style>
