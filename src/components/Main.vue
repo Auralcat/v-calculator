@@ -5,6 +5,7 @@
       <p v-show="changeMode">Show Advanced Mode</p>
       <p v-show="!changeMode">Show Basic Mode</p>
     </button>
+    <!-- Maybe you don't need this div, check later -->
     <div class="basic-mode" v-show="changeMode"></div>
     <div class="advanced-mode" v-show="!changeMode">
       <calc-button class="operation" label="√" />
@@ -15,17 +16,17 @@
     </div>
     <div class="buttons">
       <div class="numbers-panel">
-        <calc-button class="number" label="7" />
-        <calc-button class="number" label="8" />
-        <calc-button class="number" label="9" />
-        <calc-button class="number" label="4" />
-        <calc-button class="number" label="5" />
-        <calc-button class="number" label="6" />
-        <calc-button class="number" label="1"/>
-        <calc-button class="number" label="2"/>
-        <calc-button class="number" label="3" />
-        <calc-button class="number" label="0" />
-        <calc-button class="number" label="." />
+        <calc-button class="number dot" label="." />
+        <calc-button class="number zero" label="0" />
+        <calc-button class="number one" label="1"/>
+        <calc-button class="number two" label="2"/>
+        <calc-button class="number three" label="3" />
+        <calc-button class="number four" label="4" />
+        <calc-button class="number five" label="5" />
+        <calc-button class="number six" label="6" />
+        <calc-button class="number seven" label="7" />
+        <calc-button class="number eight" label="8" />
+        <calc-button class="number nine" label="9" />
       </div>
       <calc-button class="operation" label="=" />
       <calc-button class="warning" label="C" />
@@ -64,5 +65,52 @@
     display: grid;
     grid-template-columns: 40px 40px 40px;
     grid-gap: 4px;
+  }
+
+  .zero {
+    grid-column: 1 / span 2;
+    grid-row: 4;
+  }
+
+  .one {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .two {
+    grid-column: 2;
+    grid-row: 3;
+  }
+  .three {
+    grid-column: 3;
+    grid-row: 3;
+  }
+  .four {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .five {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .six {
+    grid-column: 3;
+    grid-row: 2;
+  }
+  .seven {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .eight {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .nine {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .dot {
+    grid-column: 3;
+    grid-row: 4;
   }
 </style>
