@@ -64,8 +64,33 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
   $panel-types: numbers basic-operations;
-  $numbers-list: zero one two three four five six seven eight nine dot;
-  $basic-operations-list: sum subtract divide multiply clear backspace equals;
+  $buttons: (
+    /* Numbers */
+    (name: zero,  col: 1 / span 2, row: 4),
+    (name: dot,   col: 3,          row: 4),
+    (name: one,   col: 1,          row: 3),
+    (name: two,   col: 2,          row: 3),
+    (name: three, col: 3,          row: 3),
+    (name: four,  col: 1,          row: 2),
+    (name: five,  col: 2,          row: 2),
+    (name: six,   col: 3,          row: 2),
+    (name: seven, col: 1,          row: 1),
+    (name: eight, col: 2,          row: 1),
+    (name: nine,  col: 3,          row: 1),
+    /* Basic operations */
+    (name: backspace, col: 1,          row: 1),
+    (name: clear,     col: 2,          row: 1),
+    (name: equals,    col: 1 / span 2, row: 4),
+    (name: multiply,  col: 1,          row: 2),
+    (name: divide,    col: 2,          row: 2),
+    (name: sum,       col: 1,          row: 3),
+    (name: subtract,  col: 2,          row: 3)
+  );
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+  }
 
   @each $type in $panel-types {
     .#{$type}-panel {
@@ -76,90 +101,11 @@
     }
   }
 
-  .buttons {
-    display: flex;
-    justify-content: center;
-  }
-  .zero {
-    grid-column: 1 / span 2;
-    grid-row: 4;
-  }
-
-  .one {
-    grid-column: 1;
-    grid-row: 3;
-  }
-
-  .two {
-    grid-column: 2;
-    grid-row: 3;
-  }
-  .three {
-    grid-column: 3;
-    grid-row: 3;
-  }
-  .four {
-    grid-column: 1;
-    grid-row: 2;
-  }
-  .five {
-    grid-column: 2;
-    grid-row: 2;
-  }
-  .six {
-    grid-column: 3;
-    grid-row: 2;
-  }
-  .seven {
-    grid-column: 1;
-    grid-row: 1;
-  }
-  .eight {
-    grid-column: 2;
-    grid-row: 1;
-  }
-  .nine {
-    grid-column: 3;
-    grid-row: 1;
-  }
-  .dot {
-    grid-column: 3;
-    grid-row: 4;
-  }
-
-  .backspace {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-  .clear {
-    grid-column: 2;
-    grid-row: 1;
-  }
-
-  .equals {
-    grid-column: 1 / span 2;
-    grid-row: 4;
-  }
-
-  .multiply {
-    grid-column: 1;
-    grid-row: 2;
-  }
-
-  .divide {
-    grid-column: 2;
-    grid-row: 2;
-  }
-
-  .sum {
-    grid-column: 1;
-    grid-row: 3;
-  }
-
-  .subtract {
-    grid-column: 2;
-    grid-row: 3;
+  @each $button in $buttons {
+    .#{map-get($button, name)} {
+      grid-column: map-get($button, col);
+      grid-row: map-get($button, row);
+    }
   }
 
 </style>
