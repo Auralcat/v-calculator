@@ -62,11 +62,16 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-  .numbers-panel {
-    display: grid;
-    grid-template-columns: 40px 40px 40px;
-    grid-gap: 4px;
+<style scoped lang="scss">
+  $panel-types: numbers basic-operations;
+  $numbers-list: zero one two three four five six seven eight nine dot;
+
+  @each $type in $panel-types {
+    .#{$type}-panel {
+      display: grid;
+      grid-gap: 4px;
+      grid-template-columns: 40px 40px 40px;
+    }
   }
 
   .zero {
@@ -114,12 +119,6 @@
   .dot {
     grid-column: 3;
     grid-row: 4;
-  }
-
-  .basic-operations-panel {
-    display: grid;
-    grid-template-columns: 40px 40px;
-    grid-gap: 4px;
   }
 
   .backspace {
