@@ -29,13 +29,13 @@
         <calc-button class="number nine" label="9" />
       </div>
       <div class="basic-operations-panel">
-        <calc-button class="operation" label="=" />
-        <calc-button class="warning" label="C" />
-        <calc-button class="operation" label="*" />
-        <calc-button class="operation" label="/" />
-        <calc-button class="operation" label="+" />
-        <calc-button class="operation" label="-" />
-        <calc-button class="warning" label="←" />
+        <calc-button class="operation equals" label="=" />
+        <calc-button class="warning clear" label="C" />
+        <calc-button class="operation multiply" label="*" />
+        <calc-button class="operation divide" label="/" />
+        <calc-button class="operation sum" label="+" />
+        <calc-button class="operation subtract" label="-" />
+        <calc-button class="warning backspace" label="←" />
       </div>
     </div>
   </div>
@@ -152,7 +152,7 @@
     grid-row: 3;
   }
 
-  .subtraction {
+  .subtract {
     grid-column: 2;
     grid-row: 3;
   }
