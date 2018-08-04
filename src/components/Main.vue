@@ -7,19 +7,21 @@
     </button>
     <!-- Maybe you don't need this div, check later -->
     <div class="basic-mode" v-show="changeMode"></div>
-    <div class="advanced-mode" v-show="!changeMode">
-      <calc-button class="operation" label="√" />
-      <calc-button class="operation" label="x²" />
-      <calc-button class="operation" label="ln" />
-      <calc-button class="operation" label="ϖ" />
-      <calc-button class="operation" label="^" />
+    <div class="buttons">
+      <div class="advanced-operations-panel" v-show="!changeMode">
+        <calc-button class="operation squareroot" label="√" />
+        <calc-button class="operation square" label="x²" />
+        <calc-button class="operation natural-logarithm" label="ln" />
+        <calc-button class="operation pi" label="ϖ" />
+        <calc-button class="operation exponentiate" label="^" />
+      </div>
     </div>
     <div class="buttons">
       <div class="numbers-panel">
         <calc-button class="number dot" label="." />
         <calc-button class="number zero" label="0" />
-        <calc-button class="number one" label="1"/>
-        <calc-button class="number two" label="2"/>
+        <calc-button class="number one" label="1" />
+        <calc-button class="number two" label="2" />
         <calc-button class="number three" label="3" />
         <calc-button class="number four" label="4" />
         <calc-button class="number five" label="5" />
@@ -63,7 +65,7 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-  $panel-types: numbers basic-operations;
+  $panel-types: numbers basic-operations advanced-operations;
   $buttons: (
     /* Numbers */
     (name: zero,  col: 1 / span 2, row: 4),
@@ -84,7 +86,14 @@
     (name: multiply,  col: 1,          row: 2),
     (name: divide,    col: 2,          row: 2),
     (name: sum,       col: 1,          row: 3),
-    (name: subtract,  col: 2,          row: 3)
+    (name: subtract,  col: 2,          row: 3),
+    /* Advanced operations */
+    (name: squareroot, col: 1, row: 1),
+    (name: pi, col: 2, row: 1),
+    (name: square, col: 3, row: 1),
+    (name: natural-logarithm, col: 1, row: 2),
+    (name: logarithm, col: 2, row: 2),
+    (name: exponentiate, col: 3, row: 2),
   );
 
   .buttons {
