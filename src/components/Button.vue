@@ -6,7 +6,7 @@
 import store from "@/store"
 
 export default {
-  props: ['label', 'color'],
+  props: ['label'],
   methods: {
     press () {
       switch (this.label) {
@@ -42,32 +42,29 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <!-- You'd better use Sass for this. -->
 <style lang="scss">
+  @mixin button-colors($base, $font:#000) {
+    background-color: $base;
+    border: 1px solid lighten($base, 30%);
+    box-shadow: 0 2px 0 darken($base, 10%);
+    color: $font;
+  }
   .number {
-    background-color: #ff9;
-    border: 1px solid lighten(#ff9, 30%);
-    box-shadow: 0 2px 0 darken(#ff9, 10%);
+    @include button-colors(#ff0)
   }
 
   .operation {
-    background-color: #f00;
-    border: 1px solid lighten(#f00, 30%);
-    box-shadow: 0 2px 0 darken(#f00, 10%);
+    @include button-colors(#f00)
   }
 
 button {
   font-family: OpenSans;
-  color: #FFFFFF;
-  background-color: #0ab;
-  border: 1px solid lighten(#0ab, 30%);
   border-radius: 4px;
-  box-shadow: 0 2px 0 darken(#0ab, 10%);
   position: relative;
   top: 0px;
-  transition: all ease 0.3s;
+  transition: all 0.2s;
 }
 
 button:active {
-  box-shadow: 0 2px 0 darken(#0ab, 10%);
-  top: 4px;
+  top: 2px;
 }
 </style>

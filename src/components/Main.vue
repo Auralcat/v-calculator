@@ -26,7 +26,7 @@
           <calc-button label="6"/>
         </div>
         <div class="number-row">
-          <calc-button label="1"/>
+          <calc-button class="number" label="1"/>
           <calc-button label="2"/>
           <calc-button label="3"/>
         </div>
