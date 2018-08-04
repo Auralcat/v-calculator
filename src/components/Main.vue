@@ -24,6 +24,8 @@
         <calc-button class="number" label="1"/>
         <calc-button class="number" label="2"/>
         <calc-button class="number" label="3" />
+        <calc-button class="number" label="0" />
+        <calc-button class="number" label="." />
       </div>
       <calc-button class="operation" label="=" />
       <calc-button class="warning" label="C" />
