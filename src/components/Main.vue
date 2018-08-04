@@ -65,15 +65,21 @@
 <style scoped lang="scss">
   $panel-types: numbers basic-operations;
   $numbers-list: zero one two three four five six seven eight nine dot;
+  $basic-operations-list: sum subtract divide multiply clear backspace equals;
 
   @each $type in $panel-types {
     .#{$type}-panel {
       display: grid;
       grid-gap: 4px;
       grid-template-columns: 40px 40px 40px;
+      padding: 4px;
     }
   }
 
+  .buttons {
+    display: flex;
+    justify-content: center;
+  }
   .zero {
     grid-column: 1 / span 2;
     grid-row: 4;
