@@ -42,19 +42,24 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <!-- You'd better use Sass for this. -->
 <style lang="scss">
-  @mixin button-colors($base, $font:#000) {
-    background-color: $base;
-    border: 1px solid lighten($base, 30%);
-    box-shadow: 0 2px 0 darken($base, 10%);
-    color: $font;
-  }
-  .number {
-    @include button-colors(#ff0)
-  }
+@mixin button-colors($base, $font:#000) {
+  background-color: $base;
+  border: 1px solid lighten($base, 30%);
+  box-shadow: 0 2px 0 darken($base, 10%);
+  color: $font;
+}
+/* Button type colors */
+.number {
+  @include button-colors(#ff0)
+}
 
-  .operation {
-    @include button-colors(#f00)
-  }
+.operation {
+  @include button-colors(#ffa500)
+}
+
+.warning {
+  @include button-colors(#f00)
+}
 
 button {
   font-family: OpenSans;
