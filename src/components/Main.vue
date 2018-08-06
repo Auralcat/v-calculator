@@ -17,28 +17,8 @@
       </div>
     </div>
     <div class="buttons">
-      <div class="numbers-panel">
-        <calc-button class="number dot" label="." />
-        <calc-button class="number zero" label="0" />
-        <calc-button class="number one" label="1" />
-        <calc-button class="number two" label="2" />
-        <calc-button class="number three" label="3" />
-        <calc-button class="number four" label="4" />
-        <calc-button class="number five" label="5" />
-        <calc-button class="number six" label="6" />
-        <calc-button class="number seven" label="7" />
-        <calc-button class="number eight" label="8" />
-        <calc-button class="number nine" label="9" />
-      </div>
-      <div class="basic-operations-panel">
-        <calc-button class="operation equals" label="=" />
-        <calc-button class="warning clear" label="C" />
-        <calc-button class="operation multiply" label="*" />
-        <calc-button class="operation divide" label="/" />
-        <calc-button class="operation sum" label="+" />
-        <calc-button class="operation subtract" label="-" />
-        <calc-button class="warning backspace" label="←" />
-      </div>
+      <button-panel panelType="numbers" buttonLabels="123456790."/>
+      <button-panel panelType="basic-operations" buttonLabels="=C*/+-←"/>
     </div>
   </div>
 </template>
@@ -46,6 +26,7 @@
 <script>
   import Visor from "@/components/Visor"
   import CalcButton from "@/components/Button"
+  import ButtonPanel from "@/components/ButtonPanel"
 
   export default {
     name: 'Main',
@@ -58,7 +39,8 @@
     },
     components: {
       Visor,
-      CalcButton
+      CalcButton,
+      ButtonPanel
     }
   }
 </script>
