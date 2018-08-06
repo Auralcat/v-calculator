@@ -20,6 +20,15 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style scoped lang="scss">
+$panel-types: numbers basic-operations advanced-operations;
 
+@each $type in $panel-types {
+  .#{$type}-panel {
+    display: grid;
+    grid-gap: 4px;
+    grid-template-columns: 40px 40px 40px;
+    padding: 4px;
+  }
+}
 </style>
