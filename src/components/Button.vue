@@ -33,7 +33,10 @@ export default {
         /* Advanced operations */
         "^": "operation exponentiate",
         "√": "operation squareroot",
-        "ϖ": "operation pi"
+        "ϖ": "operation pi",
+        "ln": "operation natural-logarithm",
+        "x²": "operation square",
+        "log": "operation logarithm"
       }
     }
   },
@@ -60,6 +63,9 @@ export default {
           break
         case "←":
           store.commit("backspace")
+          break
+        case "log":
+          store.commit("log10")
           break
         default:
           store.commit("addchar", this.label)
