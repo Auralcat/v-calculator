@@ -3,11 +3,13 @@
     <div>
       <visor/>
     </div>
-    <button class="change-mode" v-on:click="changeMode = !changeMode">
-      <p v-show="changeMode">Show Advanced Mode</p>
-      <p v-show="!changeMode">Show Basic Mode</p>
-    </button>
-    <div class="buttons">
+    <div class="change-mode">
+      <button v-on:click="changeMode = !changeMode">
+        <p v-show="changeMode">Show Advanced Mode</p>
+        <p v-show="!changeMode">Show Basic Mode</p>
+      </button>
+    </div>
+    <div class="buttons" v-if="!changeMode">
       <button-panel panelType="advanced-operations" :buttonLabels="advancedOperations"/>
     </div>
     <div class="buttons">
@@ -48,12 +50,17 @@
   display: flex;
   justify-content: center;
 }
-  .calculator-shell {
-    text-align: center;
-    background-color: #faf;
-    width: 25vw;
-    margin: auto;
-    padding: 12px;
-    box-shadow: 0 4px 0 darken(#faf, 10%);
-  }
+
+.calculator-shell {
+  text-align: center;
+  background-color: #ffc1e7;
+  width: 25vw;
+  margin: auto;
+  padding: 12px;
+  box-shadow: 0 4px 2px darken(#ffc1e7, 5%);
+}
+
+.change-mode {
+  padding: 12px;
+}
 </style>

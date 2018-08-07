@@ -18,13 +18,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-  input {
-    border: none;
-    border-radius: 4px;
-    padding: 12px;
-    font-family: Orbitron;
-    font-size: 16px;
-    text-align: right;
-    background-color: #bbb;
-  }
+input {
+  border: none;
+  border-radius: 4px;
+  color: #372382;
+  padding: 12px;
+  font-family: Orbitron;
+  font-size: 16px;
+  text-align: right;
+  background-color: grayscale(#Afeeee);
+}
 </style>

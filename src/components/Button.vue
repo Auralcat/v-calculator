@@ -79,21 +79,21 @@ export default {
 <style lang="scss">
 @mixin button-colors($base, $font:#000) {
   background-color: $base;
-  border: 1px solid lighten($base, 30%);
+  border: 1px solid lighten($base, 10%);
   box-shadow: 0 2px 0 darken($base, 10%);
   color: $font;
 }
 /* Button type colors */
 .number {
-  @include button-colors(#ff0)
+  @include button-colors(#b57ddb)
 }
 
 .operation {
-  @include button-colors(#ffa500)
+  @include button-colors(#5755ba)
 }
 
 .warning {
-  @include button-colors(#f00)
+  @include button-colors(#b317c1)
 }
 
 /* Base button styles */
