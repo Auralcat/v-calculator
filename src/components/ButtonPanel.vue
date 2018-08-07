@@ -21,13 +21,22 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-$panel-types: numbers basic-operations advanced-operations;
+$panel-types: (
+  (name: numbers, cols: 3),
+  (name: basic-operations, cols: 2),
+  (name: advanced-operations, cols: 3)
+);
 
 @each $type in $panel-types {
-  .#{$type}-panel {
+  $cols-list: null;
+  @for $i from 1 through map-get($type, cols) {
+     $cols-list: join($cols-list, 40px);
+  }
+
+  .#{map-get($type, name)}-panel {
     display: grid;
     grid-gap: 4px;
-    grid-template-columns: 40px 40px 40px;
+    grid-template-columns: $cols-list;
     padding: 4px;
   }
 }
