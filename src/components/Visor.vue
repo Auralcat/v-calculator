@@ -17,7 +17,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style lang="scss">
 input {
   border: none;
   border-radius: 4px;
@@ -26,6 +26,6 @@ input {
   font-family: Orbitron;
   font-size: 16px;
   text-align: right;
-  background-color: grayscale(#Afeeee);
+  background-color: lighten(#Afeeee, 13%);
 }
 </style>
