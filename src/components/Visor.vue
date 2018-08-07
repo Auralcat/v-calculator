@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input class="input" name="" type="text" readonly value="" v-model="currentDisplay"/>
+    <input name="" type="text" readonly value="" v-model="currentDisplay"/>
   </div>
 </template>
 
@@ -17,6 +17,14 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
+<style>
+  input {
+    border: none;
+    border-radius: 4px;
+    padding: 12px;
+    font-family: Orbitron;
+    font-size: 16px;
+    text-align: right;
+    background-color: #bbb;
+  }
 </style>
