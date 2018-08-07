@@ -1,12 +1,12 @@
 <template>
-  <div class="results">
-    <visor/>
+  <div class="calculator-shell">
+    <div>
+      <visor/>
+    </div>
     <button class="change-mode" v-on:click="changeMode = !changeMode">
       <p v-show="changeMode">Show Advanced Mode</p>
       <p v-show="!changeMode">Show Basic Mode</p>
     </button>
-    <!-- Maybe you don't need this div, check later -->
-    <div class="basic-mode" v-show="changeMode"></div>
     <div class="buttons">
       <button-panel panelType="advanced-operations" :buttonLabels="advancedOperations"/>
     </div>
@@ -48,4 +48,12 @@
   display: flex;
   justify-content: center;
 }
+  .calculator-shell {
+    text-align: center;
+    background-color: #faf;
+    width: 25vw;
+    margin: auto;
+    padding: 12px;
+    box-shadow: 0 4px 0 darken(#faf, 10%);
+  }
 </style>
