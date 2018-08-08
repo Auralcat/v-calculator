@@ -7,7 +7,7 @@
       <button-panel v-if="changeMode" panelType="advanced-operations" :buttonLabels="advancedOperations"/>
       <div class="change-state">
         <span class="operation-state-label">{{operationState}}</span>
-        <toggle-button v-model="changeMode" />
+        <toggle-button color="#9dffcb" v-model="changeMode" />
       </div>
     </div>
     <div class="lower-grid">
