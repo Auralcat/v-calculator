@@ -33,7 +33,7 @@ export default {
         /* Advanced operations */
         "^": "operation exponentiate",
         "√": "operation squareroot",
-        "ϖ": "operation pi",
+        "π": "operation pi",
         "ln": "operation natural-logarithm",
         "x²": "operation square",
         "log": "operation logarithm"
@@ -46,7 +46,7 @@ export default {
         case "=":
           store.commit("equals")
           break
-        case "ϖ":
+        case "π":
           store.commit("printPi")
           break
         case "ln":

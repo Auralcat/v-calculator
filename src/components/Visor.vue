@@ -25,5 +25,6 @@ input {
   font-size: 16px;
   text-align: right;
   background-color: lighten(#Afeeee, 13%);
+  margin-bottom: 12px;
 }
 </style>

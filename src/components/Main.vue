@@ -5,7 +5,7 @@
     </div>
     <div class="buttons">
       <switches v-model="changeMode" text-enabled="Advanced" text-disabled="Basic" theme="bulma" color="default"/>
-      <button-panel panelType="advanced-operations" :buttonLabels="advancedOperations"/>
+      <button-panel v-if="changeMode" panelType="advanced-operations" :buttonLabels="advancedOperations"/>
     </div>
     <div class="buttons">
       <button-panel panelType="numbers" :buttonLabels="numbers"/>
@@ -27,7 +27,7 @@ export default {
       changeMode: true,
       numbers: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, '.'],
       basicOperations: ["+", "-", "*", "/", "C" , "←", "="],
-      advancedOperations: ["ln", "x²", "^", "ϖ", "√", "log"]
+      advancedOperations: ["ln", "x²", "^", "π", "√", "log"]
     }
   },
   methods: {
