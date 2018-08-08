@@ -22,17 +22,24 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 $panel-types: (
-  (name: numbers, cols: 3),
-  (name: basic-operations, cols: 2),
-  (name: advanced-operations, cols: 3)
+  (name: numbers, cols: 3, rows: 4),
+  (name: basic-operations, cols: 2, rows: 4),
+  (name: advanced-operations, cols: 3, rows :2)
 );
 
 @each $type in $panel-types {
   $cols-list: null;
+  $rows-list: null;
+
+  $square-size: 64px;
+
   @for $i from 1 through map-get($type, cols) {
-     $cols-list: join($cols-list, 40px);
+     $cols-list: join($cols-list, $square-size);
   }
 
+  @for $i from 1 through map-get($type, rows) {
+     $rows-list: join($cols-list, $square-size);
+  }
   .#{map-get($type, name)}-panel {
     display: grid;
     grid-gap: 4px;

@@ -57,7 +57,7 @@ export default {
 .upper-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 64px;
+  grid-template-rows: 80px;
 }
 
 .lower-grid {

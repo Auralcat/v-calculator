@@ -103,7 +103,7 @@ button {
   position: relative;
   top: 0px;
   transition: all 0.2s;
-  padding: 4px;
+  padding: 8px;
 }
 
 button:active {
