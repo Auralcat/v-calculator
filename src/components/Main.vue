@@ -3,14 +3,9 @@
     <div>
       <visor/>
     </div>
-    <div class="change-mode">
-      <button v-on:click="changeMode = !changeMode">
-        <p v-show="changeMode">Show Advanced Mode</p>
-        <p v-show="!changeMode">Show Basic Mode</p>
-      </button>
-    </div>
-    <div class="buttons" v-if="!changeMode">
-      <button-panel panelType="advanced-operations" :buttonLabels="advancedOperations"/>
+    <div class="buttons">
+      <switches v-model="changeMode" text-enabled="Advanced" text-disabled="Basic" theme="bulma" color="default"/>
+      <button-panel v-show="changeMode" panelType="advanced-operations" :buttonLabels="advancedOperations"/>
     </div>
     <div class="buttons">
       <button-panel panelType="numbers" :buttonLabels="numbers"/>
@@ -23,6 +18,7 @@
   import Visor from "@/components/Visor"
   import CalcButton from "@/components/Button"
   import ButtonPanel from "@/components/ButtonPanel"
+  import Switches from 'vue-switches'
 
   export default {
     name: 'Main',
@@ -39,28 +35,29 @@
     components: {
       Visor,
       CalcButton,
-      ButtonPanel
+      ButtonPanel,
+      Switches
     }
   }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.buttons {
-  display: flex;
-  justify-content: center;
-}
+  .buttons {
+    display: flex;
+    justify-content: center;
+  }
 
-.calculator-shell {
-  text-align: center;
-  background-color: #ffc1e7;
-  width: 25vw;
-  margin: auto;
-  padding: 12px;
-  box-shadow: 0 4px 2px darken(#ffc1e7, 5%);
-}
+  .calculator-shell {
+    text-align: center;
+    background-color: #ffc1e7;
+    width: 25vw;
+    margin: auto;
+    padding: 12px;
+    box-shadow: 0 4px 2px darken(#ffc1e7, 5%);
+  }
 
-.change-mode {
-  padding: 12px;
-}
+  .change-mode {
+    padding: 12px;
+  }
 </style>
