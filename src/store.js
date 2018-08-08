@@ -14,32 +14,38 @@ export const mutations = {
       } else {
         state.current = eval(state.current)
       }
-    },
+  },
     /* The C button */
   clear: (state) => {
-      state.current = "";
-    },
+      state.current = "0";
+  },
   backspace: (state) => {
     let currentString = state.current.toString()
-    state.current = (currentString).substring(0, currentString.length - 1)
-    },
+    if (currentString !== '0') {
+      state.current = (currentString).substring(0, currentString.length - 1)
+    }
+  },
   sin: (state) => {
       state.current = Math.sin(state.current)
-    },
+  },
   cos: (state) => {
       state.current = Math.cos(state.current)
-    },
+  },
   tan: (state) => {
       state.current = Math.tan(state.current)
-    },
+  },
   log10: (state) => {
       state.current = Math.log10(state.current)
-    },
+  },
   square: (state) => {
       state.current = state.current ** 2
-    },
+  },
   addchar: (state, newChar) => {
+    if (state.current === '0' && (!isNaN(parseFloat(newChar)) && isFinite(newChar))) {
+      state.current = newChar
+    } else {
       state.current += newChar
+    }
   },
   printPi: (state) => {
     state.current = Math.PI.toString()
@@ -56,7 +62,8 @@ export const actions = {}
 
 export default new Vuex.Store({
   state: {
-    current: ''
+    current: '0',
+    previousOperations: ''
   },
   mutations,
   actions

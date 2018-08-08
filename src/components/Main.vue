@@ -5,7 +5,7 @@
     </div>
     <div class="buttons">
       <switches v-model="changeMode" text-enabled="Advanced" text-disabled="Basic" theme="bulma" color="default"/>
-      <button-panel v-show="changeMode" panelType="advanced-operations" :buttonLabels="advancedOperations"/>
+      <button-panel panelType="advanced-operations" :buttonLabels="advancedOperations"/>
     </div>
     <div class="buttons">
       <button-panel panelType="numbers" :buttonLabels="numbers"/>
@@ -57,7 +57,4 @@
     box-shadow: 0 4px 2px darken(#ffc1e7, 5%);
   }
 
-  .change-mode {
-    padding: 12px;
-  }
 </style>

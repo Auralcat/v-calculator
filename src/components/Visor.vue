@@ -1,6 +1,7 @@
 <template>
-  <div>
-    <input name="" type="text" readonly value="" v-model="currentDisplay"/>
+  <div class="visor-box">
+    <p class="previous-operations"/>
+    <p class="current-display">{{currentDisplay}}</p>
   </div>
 </template>
 
@@ -18,7 +19,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-input {
+.visor-box {
   border: none;
   border-radius: 4px;
   color: #372382;
