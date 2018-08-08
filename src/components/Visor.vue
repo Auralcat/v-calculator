@@ -1,5 +1,5 @@
 <template>
-  <input type="text" v-model="currentDisplay"/>
+  <input class="visor" type="text" v-model="currentDisplay"/>
 </template>
 
 <script>
@@ -15,8 +15,8 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss">
-input {
+<style lang="scss" scoped>
+.visor {
   border: none;
   border-radius: 4px;
   color: #372382;

@@ -4,8 +4,8 @@
       <visor/>
     </div>
     <div class="buttons">
-      <switches v-model="changeMode" text-enabled="Advanced" text-disabled="Basic" theme="bulma" color="default"/>
       <button-panel v-if="changeMode" panelType="advanced-operations" :buttonLabels="advancedOperations"/>
+      <toggle-button v-model="changeMode" :labels="{ checked: 'Advanced', unchecked: 'Basic' }" :width="buttonWidth" :height="buttonHeight" />
     </div>
     <div class="buttons">
       <button-panel panelType="numbers" :buttonLabels="numbers"/>
@@ -18,7 +18,7 @@
 import Visor from '@/components/Visor'
 import CalcButton from '@/components/Button'
 import ButtonPanel from '@/components/ButtonPanel'
-import Switches from 'vue-switches'
+import ToggleButton from 'vue-js-toggle-button/src/Button'
 
 export default {
   name: 'Main',
@@ -27,7 +27,9 @@ export default {
       changeMode: true,
       numbers: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'],
       basicOperations: ['+', '-', '*', '/', 'C', '←', '='],
-      advancedOperations: ['ln', 'x²', '^', 'π', '√', 'log']
+      advancedOperations: ['ln', 'x²', '^', 'π', '√', 'log'],
+      buttonWidth: 90,
+      buttonHeight: 20
     }
   },
   methods: {
@@ -36,7 +38,7 @@ export default {
     Visor,
     CalcButton,
     ButtonPanel,
-    Switches
+    ToggleButton
   }
 }
 </script>
@@ -46,6 +48,12 @@ export default {
 .buttons {
   display: flex;
   justify-content: center;
+}
+
+/* Prevent toggle button's click area from expanding */
+.vue-js-switch {
+  align-self: start;
+  margin-top: 4px;
 }
 
 .calculator-shell {
