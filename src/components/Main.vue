@@ -71,10 +71,11 @@ export default {
 
 /* Prevent toggle button's click area from expanding */
 .change-state {
-  text-align: left;
+  text-align: center;
   align-self: start;
   padding: 4px;
-  grid-column: 2;
+  grid-column: 3;
+  width: 86px;
 }
 
 .calculator-shell {
