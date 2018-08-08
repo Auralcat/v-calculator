@@ -5,7 +5,10 @@
     </div>
     <div class="upper-grid">
       <button-panel v-if="changeMode" panelType="advanced-operations" :buttonLabels="advancedOperations"/>
-      <toggle-button v-model="changeMode" :labels="{ checked: 'Advanced', unchecked: 'Basic' }" :width="buttonWidth" :height="buttonHeight" />
+      <div class="change-state">
+        <span class="operation-state-label">{{operationState}}</span>
+        <toggle-button v-model="changeMode" />
+      </div>
     </div>
     <div class="lower-grid">
       <button-panel panelType="numbers" :buttonLabels="numbers"/>
@@ -28,11 +31,17 @@ export default {
       numbers: ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'],
       basicOperations: ['+', '-', '*', '/', 'C', '←', '='],
       advancedOperations: ['ln', 'x²', '^', 'π', '√', 'log'],
-      buttonWidth: 90,
-      buttonHeight: 20
     }
   },
   methods: {
+  },
+  computed: {
+    operationState () {
+      if (this.changeMode) {
+        return "Advanced"
+      }
+      return "Basic"
+    }
   },
   components: {
     Visor,
@@ -55,13 +64,16 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-.hidden {
-  opacity: 0;
+
+.operation-state-label {
+  display: block;
 }
+
 /* Prevent toggle button's click area from expanding */
-.vue-js-switch {
+.change-state {
+  text-align: left;
   align-self: start;
-  margin-top: 4px;
+  padding: 4px;
   grid-column: 2;
 }
 
