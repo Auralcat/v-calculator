@@ -3,11 +3,11 @@
     <div>
       <visor/>
     </div>
-    <div class="buttons">
+    <div class="upper-grid">
       <button-panel v-if="changeMode" panelType="advanced-operations" :buttonLabels="advancedOperations"/>
       <toggle-button v-model="changeMode" :labels="{ checked: 'Advanced', unchecked: 'Basic' }" :width="buttonWidth" :height="buttonHeight" />
     </div>
-    <div class="buttons">
+    <div class="lower-grid">
       <button-panel panelType="numbers" :buttonLabels="numbers"/>
       <button-panel panelType="basic-operations" :buttonLabels="basicOperations"/>
     </div>
@@ -45,15 +45,24 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-.buttons {
-  display: flex;
-  justify-content: center;
+.upper-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 64px;
 }
 
+.lower-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.hidden {
+  opacity: 0;
+}
 /* Prevent toggle button's click area from expanding */
 .vue-js-switch {
   align-self: start;
   margin-top: 4px;
+  grid-column: 2;
 }
 
 .calculator-shell {
