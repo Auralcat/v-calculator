@@ -2,7 +2,13 @@ import { expect } from 'chai'
 import { mutations } from '@/store'
 
 describe('mutations', () => {
-  it('addchar should add that char to current value', function () {
+  it("Current value should always be a string", function() {
+    const state = { current: '012' }
+    mutations.addchar(state, '3')
+    expect(state.current).to.be.a('string');
+  });
+
+  it('addchar should append that char to current value', function () {
     const state = { current: '0' }
     mutations.addchar(state, 'A')
     expect(state.current).to.equal('0A')
