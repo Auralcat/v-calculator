@@ -42,7 +42,7 @@ $panel-types: (
   }
   .#{map-get($type, name)}-panel {
     display: grid;
-    grid-gap: 4px;
+    grid-gap: 2px;
     grid-template-columns: $cols-list;
     padding: 4px;
   }

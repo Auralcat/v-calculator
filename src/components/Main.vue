@@ -58,11 +58,13 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 80px;
+  grid-gap: 2px;
 }
 
 .lower-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: 2px;
 }
 
 .operation-state-label {
