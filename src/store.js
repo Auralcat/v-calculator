@@ -5,19 +5,19 @@ Vue.use(Vuex)
 
 // For testing
 export const mutations = {
-    /* The = button */
+  /* The = button */
   equals: (state) => {
-      if ((state.current).indexOf("^") > -1) {
-        let base = (state.current).slice(0, (state.current).indexOf("^"))
-        let exponent = (state.current).slice((state.current).indexOf("^") + 1)
-        state.current = eval("Math.pow(" + base + "," + exponent + ")")
-      } else {
-        state.current = eval(state.current)
-      }
+    if ((state.current).indexOf('^') > -1) {
+      let base = (state.current).slice(0, (state.current).indexOf('^'))
+      let exponent = (state.current).slice((state.current).indexOf('^') + 1)
+      state.current = eval('Math.pow(' + base + ',' + exponent + ')')
+    } else {
+      state.current = eval(state.current)
+    }
   },
-    /* The C button */
+  /* The C button */
   clear: (state) => {
-      state.current = "0";
+    state.current = '0'
   },
   backspace: (state) => {
     let currentString = state.current.toString()
@@ -26,19 +26,19 @@ export const mutations = {
     }
   },
   sin: (state) => {
-      state.current = Math.sin(state.current)
+    state.current = Math.sin(state.current)
   },
   cos: (state) => {
-      state.current = Math.cos(state.current)
+    state.current = Math.cos(state.current)
   },
   tan: (state) => {
-      state.current = Math.tan(state.current)
+    state.current = Math.tan(state.current)
   },
   log10: (state) => {
-      state.current = Math.log10(state.current)
+    state.current = Math.log10(state.current)
   },
   square: (state) => {
-      state.current = state.current ** 2
+    state.current = state.current ** 2
   },
   addchar: (state, newChar) => {
     if (state.current === '0' && (!isNaN(parseFloat(newChar)) && isFinite(newChar))) {

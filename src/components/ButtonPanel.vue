@@ -5,18 +5,18 @@
 </template>
 
 <script>
-  import CalcButton from "@/components/Button"
-  export default {
-    props: ['panelType', 'buttonLabels'],
-    data () {
-      return {
+import CalcButton from '@/components/Button'
+export default {
+  props: ['panelType', 'buttonLabels'],
+  data () {
+    return {
 
-      }
-    },
-    components: {
-      CalcButton
     }
+  },
+  components: {
+    CalcButton
   }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

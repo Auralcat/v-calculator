@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import store from "@/store"
+import store from '@/store'
 
 export default {
   props: ['label'],
@@ -11,66 +11,66 @@ export default {
     return {
       translationTable: {
         /* Nums */
-        1: "number one",
-        2: "number two",
-        3: "number three",
-        4: "number four",
-        5: "number five",
-        6: "number six",
-        7: "number seven",
-        8: "number eight",
-        9: "number nine",
-        0: "number zero",
-        ".": "number dot",
+        1: 'number one',
+        2: 'number two',
+        3: 'number three',
+        4: 'number four',
+        5: 'number five',
+        6: 'number six',
+        7: 'number seven',
+        8: 'number eight',
+        9: 'number nine',
+        0: 'number zero',
+        '.': 'number dot',
         /* Basic operations */
-        "C": "warning clear",
-        "←": "warning backspace",
-        "=": "operation equals",
-        "+": "operation sum",
-        "-": "operation subtract",
-        "*": "operation multiply",
-        "/": "operation divide",
+        'C': 'warning clear',
+        '←': 'warning backspace',
+        '=': 'operation equals',
+        '+': 'operation sum',
+        '-': 'operation subtract',
+        '*': 'operation multiply',
+        '/': 'operation divide',
         /* Advanced operations */
-        "^": "operation exponentiate",
-        "√": "operation squareroot",
-        "π": "operation pi",
-        "ln": "operation natural-logarithm",
-        "x²": "operation square",
-        "log": "operation logarithm"
+        '^': 'operation exponentiate',
+        '√': 'operation squareroot',
+        'π': 'operation pi',
+        'ln': 'operation natural-logarithm',
+        'x²': 'operation square',
+        'log': 'operation logarithm'
       }
     }
   },
   methods: {
     press () {
       switch (this.label) {
-        case "=":
-          store.commit("equals")
+        case '=':
+          store.commit('equals')
           break
-        case "π":
-          store.commit("printPi")
+        case 'π':
+          store.commit('printPi')
           break
-        case "ln":
-          store.commit("ln")
+        case 'ln':
+          store.commit('ln')
           break
-        case "C":
-          store.commit("clear")
+        case 'C':
+          store.commit('clear')
           break
-        case "√":
-          store.commit("squareroot")
+        case '√':
+          store.commit('squareroot')
           break
-        case "x²":
-          store.commit("square")
+        case 'x²':
+          store.commit('square')
           break
-        case "←":
-          store.commit("backspace")
+        case '←':
+          store.commit('backspace')
           break
-        case "log":
-          store.commit("log10")
+        case 'log':
+          store.commit('log10')
           break
         default:
-          store.commit("addchar", this.label)
+          store.commit('addchar', this.label)
       }
-    },
+    }
   }
 }
 </script>
