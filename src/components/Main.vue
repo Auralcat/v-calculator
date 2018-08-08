@@ -49,6 +49,7 @@
   }
 
   .calculator-shell {
+    display: inline-table;
     text-align: center;
     background-color: #ffc1e7;
     width: 25vw;
