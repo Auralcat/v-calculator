@@ -1,5 +1,5 @@
 <template>
-  <input class="visor" type="text" v-model="currentDisplay"/>
+  <input class="visor" type="text" v-model="currentDisplay" readonly/>
 </template>
 
 <script>
