@@ -56,15 +56,15 @@ export default {
 <style scoped lang="scss">
 .upper-grid {
   display: grid;
+  grid-gap: 2px;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 80px;
-  grid-gap: 2px;
 }
 
 .lower-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   grid-gap: 2px;
+  grid-template-columns: 1fr 1fr;
 }
 
 .operation-state-label {
@@ -73,21 +73,21 @@ export default {
 
 /* Prevent toggle button's click area from expanding */
 .change-state {
-  text-align: center;
   align-self: start;
-  padding: 4px;
   grid-column: 3;
+  padding: 4px;
+  text-align: center;
   width: 86px;
 }
 
 .calculator-shell {
-  display: inline-table;
-  text-align: center;
   background-color: #ffc1e7;
-  width: 25vw;
+  box-shadow: 0 4px 2px darken(#ffc1e7, 5%);
+  display: inline-table;
   margin: auto;
   padding: 12px;
-  box-shadow: 0 4px 2px darken(#ffc1e7, 5%);
+  text-align: center;
+  width: 25vw;
 }
 
 </style>

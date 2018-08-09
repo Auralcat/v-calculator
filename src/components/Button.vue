@@ -98,12 +98,12 @@ export default {
 
 /* Base button styles */
 button {
-  font-family: Monospace, sans-serif;
   border-radius: 4px;
+  font-family: Monospace, sans-serif;
+  padding: 8px;
   position: relative;
   top: 0px;
   transition: all 0.2s;
-  padding: 8px;
 }
 
 button:active {
