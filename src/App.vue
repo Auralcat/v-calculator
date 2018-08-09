@@ -1,9 +1,12 @@
 <template>
   <div id="app">
-    <!-- <img src="./assets/logo.png">
-         <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <!-- Main app goes here -->
     <Main/>
+    <div class="source">
+      <p>
+        Source code is available at
+        <a href="https://github.com/Auralcat/v-calculator">GitHub</a>
+      </p>
+    </div>
   </div>
 </template>
 

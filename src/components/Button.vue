@@ -98,7 +98,7 @@ export default {
 
 /* Base button styles */
 button {
-  font-family: OpenSans;
+  font-family: Monospace, sans-serif;
   border-radius: 4px;
   position: relative;
   top: 0px;
