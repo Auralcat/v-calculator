@@ -12,12 +12,12 @@ const factory = (values = {}) => {
 describe('Visor.vue', () => {
   it('shows the number 0 when mounted', () => {
     const wrapper = factory()
-    expect(wrapper.find('input').text()).to.equal('0')
+    expect(wrapper.find('.visor').text()).to.equal('0')
   })
 
   it("Shows big numbers separated by commas", function() {
     const wrapper = factory()
-    expect(wrapper.find('input').text()).to.equal('123,456')
+    expect(wrapper.find('.visor').text()).to.equal('123,456')
   });
 
 })

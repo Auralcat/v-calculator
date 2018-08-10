@@ -12,12 +12,11 @@ const factory = (values = {}) => {
 describe('Button.vue', () => {
   it('adds a number to the visor when clicked and if it has a number as label', () => {
     const wrapper = factory({ label: '7'})
-    const button = wrapper.find('button')
-    button.trigger('click')
+    wrapper.find('button').trigger('click')
     expect(store.state.current).to.equal('7')
   })
 
-  it('should be able to execute function call', function () {
+  // it('should be able to execute function call', function () {
 
-  })
+  // })
 })
