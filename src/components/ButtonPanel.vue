@@ -24,22 +24,18 @@ export default {
 $panel-types: (
   (name: numbers, cols: 3, rows: 4),
   (name: basic-operations, cols: 2, rows: 4),
-  (name: advanced-operations, cols: 3, rows :2)
+  (name: advanced-operations, cols: 3, rows: 3)
 );
 
 @each $type in $panel-types {
   $cols-list: null;
-  $rows-list: null;
 
-  $square-size: 64px;
+  $square-size: 4rem;
 
   @for $i from 1 through map-get($type, cols) {
      $cols-list: join($cols-list, $square-size);
   }
 
-  @for $i from 1 through map-get($type, rows) {
-     $rows-list: join($cols-list, $square-size);
-  }
   .#{map-get($type, name)}-panel {
     display: grid;
     grid-gap: 2px;

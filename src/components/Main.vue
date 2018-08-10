@@ -59,6 +59,7 @@ export default {
   grid-gap: 2px;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 80px;
+  margin-bottom: 20px;
 }
 
 .lower-grid {
@@ -87,7 +88,7 @@ export default {
   margin: auto;
   padding: 12px;
   text-align: center;
-  width: 25vw;
+  width: 10vw;
 }
 
 </style>
