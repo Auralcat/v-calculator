@@ -10,4 +10,13 @@ describe('Visor.vue', () => {
     })
     expect(wrapper.text()).to.include(msg)
   })
+
+  it("Shows big numbers separated by commas", function() {
+    const state = { current: '123456' };
+    const wrapper = shallowMount(Visor, {
+      propsData: state
+    })
+    expect(wrapper.text()).to.equal('123,456');
+  });
+
 })
