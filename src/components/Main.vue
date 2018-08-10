@@ -58,7 +58,6 @@ export default {
   display: grid;
   grid-gap: 2px;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 80px;
   margin-bottom: 20px;
 }
 
