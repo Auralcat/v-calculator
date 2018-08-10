@@ -30,7 +30,7 @@ $panel-types: (
 @each $type in $panel-types {
   $cols-list: null;
 
-  $square-size: 4rem;
+  $square-size: 3rem;
 
   @for $i from 1 through map-get($type, cols) {
      $cols-list: join($cols-list, $square-size);
@@ -41,6 +41,9 @@ $panel-types: (
     grid-gap: 2px;
     grid-template-columns: $cols-list;
     padding: 4px;
+    @if (map-get($type, name) == 'basic-operations') {
+      grid-column: 3;
+    }
   }
 }
 </style>
