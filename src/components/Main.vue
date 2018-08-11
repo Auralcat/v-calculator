@@ -35,8 +35,15 @@ export default {
   },
   methods: {
     keyMonitor (event) {
-      alert("You pressed the key", event.key)
+      alert(`This is key ${String.fromCharCode(event.keyCode)}`)
     },
+  },
+  created () {
+    /* Vue has no dominion over the body tag */
+    document.addEventListener('keyup', this.keyMonitor)
+  },
+  destroyed () {
+    document.removeEventListener('keyup', this.keyMonitor)
   },
   computed: {
     operationState () {
