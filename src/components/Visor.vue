@@ -8,6 +8,7 @@ import store from '@/store'
 export default {
   computed: {
     currentDisplay () {
+      /* return store.state.current.match(/.{1,3}/g).join(",") */
       return store.state.current
     }
   }

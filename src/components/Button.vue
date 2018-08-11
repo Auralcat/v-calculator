@@ -103,6 +103,7 @@ export default {
 button {
   border-radius: 4px;
   font-family: Monospace, sans-serif;
+  font-size: 1rem;
   padding: 8px;
   position: relative;
   top: 0px;
