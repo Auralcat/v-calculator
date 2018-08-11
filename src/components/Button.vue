@@ -67,6 +67,9 @@ export default {
         case 'log':
           store.commit('log10')
           break
+        case 'n!':
+          store.commit('factorial')
+          break
         default:
           store.commit('addchar', this.label)
       }

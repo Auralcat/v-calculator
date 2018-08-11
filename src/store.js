@@ -55,6 +55,16 @@ export const mutations = {
   },
   squareroot: (state) => {
     state.current = Math.sqrt(state.current)
+  },
+  factorial: (state) => {
+    const calcFactorial = (num) => {
+      if (num <= 1) {
+        return 1
+      }
+      return calcFactorial(num - 1) * num
+    }
+
+    state.current = calcFactorial(state.current)
   }
 }
 
