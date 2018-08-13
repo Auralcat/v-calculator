@@ -100,14 +100,14 @@ export default {
 .upper-grid {
   display: grid;
   grid-gap: 2px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   margin-bottom: 20px;
 }
 
 .lower-grid {
   display: grid;
   grid-gap: 2px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .operation-state-label {
