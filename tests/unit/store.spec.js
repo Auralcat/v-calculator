@@ -107,4 +107,11 @@ describe('math operations', function () {
     mutations.ln(state)
     expect(state.current).to.equal(Math.log(16))
   })
+
+  it("factorial should return the correct result", function() {
+    const state = { current: '6' }
+    mutations.factorial(state)
+    expect(state.current).to.equal(720)
+  });
+
 })
