@@ -6,6 +6,7 @@
         Source code is available at
         <a href="https://github.com/Auralcat/v-calculator">GitHub</a>
       </p>
+      <p>Made by Miriam Retka</p>
     </div>
   </div>
 </template>
