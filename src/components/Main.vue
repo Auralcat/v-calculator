@@ -125,7 +125,7 @@ export default {
 
 .calculator-shell {
   background-color: #ffc1e7;
-  box-shadow: 0 4px 2px darken(#ffc1e7, 5%);
+  box-shadow: 0 2vw 0 darken(#ffc1e7, 5%);
   display: inline-table;
   margin: auto;
   padding: 12px;
